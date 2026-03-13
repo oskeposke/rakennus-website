@@ -342,32 +342,34 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section id="home" className="pt-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center text-white pt-16"
+      >
+        <Image
+          src="/images/DSC_5924-scaled.jpg"
+          alt="Ny-Bygg"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center px-4 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             {c.hero.heading}
           </h1>
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 text-gray-200 font-medium">
+            {c.hero.subheading}
+          </p>
+          <p className="text-base sm:text-lg mb-8 text-gray-300 leading-relaxed">
+            {c.hero.intro}
+          </p>
           <a
             href="#contact"
-            className="inline-block bg-[#0cc0df] hover:bg-[#0aa8c4] text-white font-semibold px-8 py-3 rounded transition-colors text-lg mb-8"
+            className="inline-block bg-[#0cc0df] hover:bg-[#0aa8c4] text-white font-semibold px-8 py-3 rounded transition-colors text-lg"
           >
             {c.hero.cta}
           </a>
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
-            {c.hero.subheading}
-          </h2>
-          <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            {c.hero.intro}
-          </p>
-        </div>
-        <div className="relative w-full aspect-[16/7]">
-          <Image
-            src="/images/DSC_2744-scaled.jpg"
-            alt="Ny-Bygg"
-            fill
-            className="object-cover"
-            priority
-          />
         </div>
       </section>
 
