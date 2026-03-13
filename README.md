@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ny-Bygg — Rakennus Website
+
+A single-page website for Ny-Bygg, a Finnish building contractor based in Raseborg. Built with Next.js and Tailwind CSS.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Swapping Photos and Text
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Images
 
-## Learn More
+All images are in `public/images/`. To replace them:
 
-To learn more about Next.js, take a look at the following resources:
+1. Drop your new images into `public/images/`
+2. Update the references in `src/app/page.tsx`:
+   - **Hero image**: change the `src` in the Hero `<Image>` component (~line 130)
+   - **Service cards**: update the `image` field in the `SERVICES` array (~line 14)
+   - **Gallery**: update the `GALLERY_IMAGES` array (~line 56)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Text Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All text is defined at the top of `src/app/page.tsx`:
 
-## Deploy on Vercel
+- **Navigation links**: `NAV_LINKS` array
+- **Service descriptions**: `SERVICES` array — edit `category`, `title`, and `description`
+- **Testimonials**: `TESTIMONIALS` array — edit `quote` and `name`
+- **Hero tagline**: inside the Hero `<section>` JSX
+- **Contact email**: search for `info@ny-bygg.fi` and replace
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Colors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The accent color (`#0cc0df`) is used inline throughout the components. Search and replace to change the brand color.
+
+## Deployment
+
+```bash
+vercel --prod
+```
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 16
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- TypeScript
